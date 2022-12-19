@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Personality Quiz</title>
+</head>
+<body>
+  <h1>Personality Quiz</h1>
+  <form id="quiz-form">
+    <!-- Questions go here -->
+    <p>Do you regularly make new friends?</p>
+    <input type="radio" name="question1" value="No I hate people">No I hate People<br>
+    <input type="radio" name="question1" value="Sometimes I branch out">Sometimes I branch out<br>
+    <input type="radio" name="question1" value="Yes I love making friends">Yes I love making friends<br>
+    
+    <p>What is your favorite color?</p>
+    <input type="radio" name="question1" value="red">Red<br>
+    <input type="radio" name="question1" value="green">Green<br>
+    <input type="radio" name="question1" value="blue">Blue<br>
+    
+    <p>What is your favorite color?</p>
+    <input type="radio" name="question1" value="red">Red<br>
+    <input type="radio" name="question1" value="green">Green<br>
+    <input type="radio" name="question1" value="blue">Blue<br>
+    
+    <p>What is your favorite color?</p>
+    <input type="radio" name="question1" value="red">Red<br>
+    <input type="radio" name="question1" value="green">Green<br>
+    <input type="radio" name="question1" value="blue">Blue<br>
+    
+    <p>What is your favorite color?</p>
+    <input type="radio" name="question1" value="red">Red<br>
+    <input type="radio" name="question1" value="green">Green<br>
+    <input type="radio" name="question1" value="blue">Blue<br>
+    <!-- More questions go here -->
+    
+    <p>What is your favorite color?</p>
+    <input type="radio" name="question1" value="red">Red<br>
+    <input type="radio" name="question1" value="green">Green<br>
+    <input type="radio" name="question1" value="blue">Blue<br>
+    <!-- More questions go here -->
+    <!-- More questions go here -->
+    <!-- More questions go here -->
+    <!-- More questions go here -->
+    <!-- More questions go here -->
+    <button type="submit">Submit</button>
+  </form>
+  <div id="results"></div>
+
+  <script>
+    // Listen for form submission
+    document.getElementById('quiz-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from refreshing page
+
+      // Get user's answers
+      const answers = [
+        document.querySelector('input[name="question1"]:checked').value,
+        // More answers go here
+      ];
+
+      // Calculate results
+      let results = 0;
+      answers.forEach(function(answer) {
+        if (answer === 'correct answer') {
+          results++;
+        }
+      });
+
+      // Display results
+      document.getElementById('results').innerHTML = 'You got ' + results + ' out of ' + answers.length + ' questions correct!';
+    });
+    
+  </script>
+</body>
+</html>
